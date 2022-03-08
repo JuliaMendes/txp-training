@@ -9,6 +9,9 @@
   "author": "JuliaMendes",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint": "^8.10.0",
     "typescript": "^4.6.2"
   }
 }
