@@ -1,0 +1,14 @@
+{
+  "name": "txp-training",
+  "version": "0.0.0",
+  "description": "training project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "JuliaMendes",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}
