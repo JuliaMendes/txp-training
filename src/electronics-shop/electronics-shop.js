@@ -1,20 +1,19 @@
-function getMoneySpent(keyboards, drives, b) {
-  const cheepKeyboards = []
-  const cheepDrives = []
-  for(let i = 0; i < keyboards.length; i++){
-    if(keyboards[i] < b){
-      cheepKeyboards.push(keyboards[i])
-    }
-  }
-  for(let j = 0; j < drives.length; j++){
-    if(drives[j] < Math.max(cheepKeyboards)){
-      cheepDrives.push(drives[j])
+// https://www.hackerrank.com/challenges/electronics-shop/problem
 
+export function getMoneySpent(keyboards, drives, b) {
+  const purchasePossibilities = []
+  for(let i = 0; i < keyboards.length; i++) {
+    for (let j = 0; j < drives.length; j++) {
+      if(keyboards[i] + drives[j] <= b) {
+        purchasePossibilities.push(keyboards[i] + drives[j])
+      }
     }
   }
-  if(cheepKeyboards.length === 0 ||cheepDrives.length === 0 || b < Math.max(cheepKeyboards) + Math.max(cheepDrives)){
-    return -1
+
+  if (purchasePossibilities.length != 0) {
+    const mostExpensivePurchase = Math.max(...purchasePossibilities)
+    return mostExpensivePurchase
   } else {
-    return Math.max(cheepKeyboards) + Math.max(cheepDrives)
+    return -1
   }
 }
